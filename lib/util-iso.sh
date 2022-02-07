@@ -519,9 +519,6 @@ check_requirements(){
     if ! $(is_valid_comp ${iso_compression}); then
         die "%s is not a valid compression algorithm!" "${iso_compression}"
     fi
-
-    local iso_kernel=${kernel:5:1}
-    [[ ${iso_kernel} < "4" ]] && die "ISO kernel must be version>=4.0!"
 }
 
 compress_images(){
